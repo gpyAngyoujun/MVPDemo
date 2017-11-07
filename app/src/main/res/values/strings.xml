@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">MVPCacheProxy</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_images">Images</string>
+    <string name="title_text_image">Text Image</string>
+    <string name="title_info">Information</string>
+    <string name="permission_reminder">权限提醒</string>
+    <string name="meitu_premission_prompt_desc">MVPDemo 将会连接网络以获取相关图片、文字信息等资源信息。</string>
+    <string name="agree">同意</string>
+    <string name="cancel">取消</string>
+    <string name="net_exception">网络异常，请检查网络链接</string>
 </resources>
