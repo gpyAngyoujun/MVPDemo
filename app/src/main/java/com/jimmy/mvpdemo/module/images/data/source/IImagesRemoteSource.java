@@ -2,28 +2,25 @@ package com.jimmy.mvpdemo.module.images.data.source;
 
 import com.jimmy.mvpcacheproxy.data.api.ApiHelper;
 import com.jimmy.mvpcacheproxy.data.source.IRemoteSource;
+import com.jimmy.mvpcacheproxy.data.source.ISource;
 import com.jimmy.mvpdemo.module.images.data.api.ImagesApi;
-import com.jimmy.mvpdemo.module.images.data.entity.ImageEntity;
-
-import java.util.List;
+import com.jimmy.mvpdemo.module.images.data.entity.ImagesResp;
 
 import io.reactivex.Observable;
-import io.reactivex.ObservableEmitter;
-import io.reactivex.ObservableOnSubscribe;
 
 /**
  * Created by yangyoujun on 17-9-20.
  * 远程方法
  */
 
-public interface IImagesRemoteSource extends IRemoteSource, IImagesSource {
+public interface IImagesRemoteSource extends IRemoteSource, ISource {
 
-    Observable<ImageEntity> fetchImages(int pager);
+    Observable<ImagesResp> fetchImages(int pager);
 
     class SourceImpl implements IImagesRemoteSource {
 
         @Override
-        public Observable<ImageEntity> fetchImages(int pager) {
+        public Observable<ImagesResp> fetchImages(int pager) {
             ImagesApi api = ApiHelper.create(ImagesApi.class);
             return api.welfare(ImagesSourceHelper.FETCH_SIZE, pager);
         }

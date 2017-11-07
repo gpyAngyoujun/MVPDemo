@@ -6,7 +6,7 @@ import android.support.v4.app.FragmentManager;
 import android.text.TextUtils;
 
 
-public abstract class AbsActivitySingle<T extends AbsFragmentView> extends AbsActivity {
+public abstract class AbsActivitySingle<T extends AbsView> extends AbsActivity {
 
     @Override
     protected final void onAgree(Bundle savedInstanceState) {

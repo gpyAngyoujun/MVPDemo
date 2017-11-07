@@ -1,12 +1,9 @@
 package com.jimmy.mvpdemo.module.images.data.api;
 
 
-import com.jimmy.mvpdemo.module.images.data.entity.ImageEntity;
-
-import java.util.List;
+import com.jimmy.mvpdemo.module.images.data.entity.ImagesResp;
 
 import io.reactivex.Observable;
-import retrofit2.adapter.rxjava2.Result;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
 
@@ -17,6 +14,6 @@ import retrofit2.http.Path;
 public interface ImagesApi {
 
     @GET("api/data/%E7%A6%8F%E5%88%A9/{SIZE}/{PAGER}")
-    Observable<ImageEntity> welfare(@Path("SIZE") int size, @Path("PAGER") int pager);
+    Observable<ImagesResp> welfare(@Path("SIZE") int size, @Path("PAGER") int pager);
 
 }

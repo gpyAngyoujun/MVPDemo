@@ -5,15 +5,15 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.jimmy.mvpcacheproxy.AbsFragmentView;
+import com.jimmy.mvpcacheproxy.AbsView;
 import com.jimmy.mvpcacheproxy.annotation.BindView;
 import com.jimmy.mvpdemo.R;
-import com.jimmy.mvpdemo.module.images.data.entity.ImageEntity;
+import com.jimmy.mvpdemo.module.images.data.entity.ImagesResp;
 
 import java.util.List;
 
 
-public class ImagesFragmentView extends AbsFragmentView<IImages.Presenter, ImagesFragmentView.ViewHolder>
+public class ImagesView extends AbsView<IImages.Presenter, ImagesView.ViewHolder>
         implements IImages.View {
 
     @Override
@@ -52,11 +52,11 @@ public class ImagesFragmentView extends AbsFragmentView<IImages.Presenter, Image
     }
 
     @Override
-    public void updateImages(List<ImageEntity> images) {
+    public void updateImages(List<ImagesResp> images) {
 
     }
 
-    static class ViewHolder extends AbsFragmentView.AbsViewHolder {
+    static class ViewHolder extends AbsView.AbsViewHolder {
 
         @BindView(R.id.srl_images)
         SwipeRefreshLayout srlImages;

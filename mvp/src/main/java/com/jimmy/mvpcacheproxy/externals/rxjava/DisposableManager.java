@@ -5,14 +5,11 @@ import android.text.TextUtils;
 
 import com.jimmy.mvpcacheproxy.helper.LogHelper;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 import java.util.WeakHashMap;
 
-import io.reactivex.Observable;
+import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
 import io.reactivex.internal.functions.ObjectHelper;
 
 /**
@@ -33,7 +30,7 @@ class DisposableManager {
         return mInstance;
     }
 
-    private final Map<String, List<Disposable>> mDispose = new WeakHashMap<>();
+    private final Map<String, CompositeDisposable> mDispose = new WeakHashMap<>();
 
     private DisposableManager() {
     }
@@ -56,31 +53,19 @@ class DisposableManager {
         disposables(presenter).remove(disposable);
     }
 
-    void disposeAll(String presenter) {
-        List<Disposable> remove = mDispose.remove(presenter);
+    void dispose(String presenter) {
+        CompositeDisposable remove = mDispose.remove(presenter);
         if (remove == null) {
             return;
         }
-        Observable.fromIterable(remove)
-                .subscribe(new Consumer<Disposable>() {
-                    @Override
-                    public void accept(Disposable disposable) throws Exception {
-                        disposable.dispose();
-                    }
-                }, new Consumer<Throwable>() {
-                    @Override
-                    public void accept(Throwable throwable) throws Exception {
-                        throwable.printStackTrace();
-                        LogHelper.i("DisposableManager-accept: ", "disposeAll free failed?");
-                    }
-                });
+        remove.dispose();
     }
 
     @NonNull
-    private List<Disposable> disposables(String presenter) {
-        List<Disposable> disposables = mDispose.get(presenter);
+    private CompositeDisposable disposables(String presenter) {
+        CompositeDisposable disposables = mDispose.get(presenter);
         if (disposables == null) {
-            disposables = new ArrayList<>();
+            disposables = new CompositeDisposable();
             mDispose.put(presenter, disposables);
         }
         return disposables;

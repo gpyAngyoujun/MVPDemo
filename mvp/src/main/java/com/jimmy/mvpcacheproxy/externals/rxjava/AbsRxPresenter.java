@@ -22,7 +22,7 @@ public abstract class AbsRxPresenter<VP extends IView> extends AbsPresenter<VP> 
 
     @Override
     public void destroy() {
-        DisposableManager.ins().disposeAll(toString());
+        DisposableManager.ins().dispose(toString());
         super.destroy();
     }
 
@@ -31,29 +31,29 @@ public abstract class AbsRxPresenter<VP extends IView> extends AbsPresenter<VP> 
      */
     public abstract class ObserverOnRecycler<T> implements Observer<T> {
 
-        private final String mSimpleName;
+        private final String mName;
         private Disposable d;
 
         protected ObserverOnRecycler() {
-            mSimpleName = AbsRxPresenter.this.getClass().getSimpleName();
-            LogHelper.i(mSimpleName);
+            mName = AbsRxPresenter.this.toString();
+            LogHelper.i(mName);
         }
 
         @Override
         public void onSubscribe(Disposable d) {
             this.d = d;
-            DisposableManager.ins().onSubscribe(mSimpleName, d);
+            DisposableManager.ins().onSubscribe(mName, d);
         }
 
         @Override
         public void onError(Throwable e) {
             e.printStackTrace();
-            DisposableManager.ins().onError(mSimpleName, d);
+            DisposableManager.ins().onError(mName, d);
         }
 
         @Override
         public void onComplete() {
-            DisposableManager.ins().onComplete(mSimpleName, d);
+            DisposableManager.ins().onComplete(mName, d);
         }
     }
 

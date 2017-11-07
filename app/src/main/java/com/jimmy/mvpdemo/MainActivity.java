@@ -10,7 +10,7 @@ import android.view.MenuItem;
 
 import com.jimmy.mvpcacheproxy.AbsActivityContainer;
 import com.jimmy.mvpcacheproxy.widget.MultiplePagerContainer;
-import com.jimmy.mvpdemo.module.images.ImagesFragmentView;
+import com.jimmy.mvpdemo.module.images.ImagesView;
 
 public class MainActivity extends AbsActivityContainer {
 
@@ -84,7 +84,7 @@ public class MainActivity extends AbsActivityContainer {
     public Fragment onCreateFragmentViewItem(int position) {
         switch (position) {
             case 0:
-                return new ImagesFragmentView().lazyLoading(true);
+                return new ImagesView().lazyLoading(true);
             default:
                 return new Fragment();
         }

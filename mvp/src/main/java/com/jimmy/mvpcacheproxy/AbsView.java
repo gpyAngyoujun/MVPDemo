@@ -16,7 +16,7 @@ import com.jimmy.mvpcacheproxy.proxy.MVPProxyHelper;
 import java.lang.reflect.Field;
 
 
-public abstract class AbsFragmentView<P extends IPresenter, VH extends AbsFragmentView.AbsViewHolder> extends Fragment
+public abstract class AbsView<P extends IPresenter, VH extends AbsView.AbsViewHolder> extends Fragment
         implements IView {
 
     protected P mPresenter;
@@ -26,7 +26,7 @@ public abstract class AbsFragmentView<P extends IPresenter, VH extends AbsFragme
     private Toast mToast;
     private ProgressDialog mProgress;
 
-    public AbsFragmentView() {
+    public AbsView() {
         initMvp();
     }
 

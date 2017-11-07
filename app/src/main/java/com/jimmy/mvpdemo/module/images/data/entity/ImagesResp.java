@@ -8,7 +8,7 @@ import java.util.List;
  * Created by yangyoujun on 17-9-17.
  */
 
-public class ImageEntity extends AbsEntity {
+public class ImagesResp extends AbsEntity {
 
 
     private boolean error;

@@ -2,8 +2,8 @@ package com.jimmy.mvpdemo.module.images;
 
 import com.jimmy.mvpcacheproxy.externals.rxjava.AbsRxPresenter;
 import com.jimmy.mvpdemo.R;
-import com.jimmy.mvpdemo.module.images.data.entity.ImageEntity;
-import com.jimmy.mvpdemo.module.images.data.source.ImagesSource;
+import com.jimmy.mvpdemo.module.images.data.entity.ImagesResp;
+import com.jimmy.mvpdemo.module.images.data.source.ImagesRepository;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
@@ -23,13 +23,13 @@ class ImagesPresenter extends AbsRxPresenter<IImages.View> implements IImages.Pr
     @Override
     protected void onStart() {
 
-        ImagesSource.ins().remote()
+        ImagesRepository.ins().remote()
                 .fetchImages(PAGER)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new ObserverOnRecycler<ImageEntity>() {
+                .subscribe(new ObserverOnRecycler<ImagesResp>() {
                     @Override
-                    public void onNext(ImageEntity imageEntities) {
+                    public void onNext(ImagesResp imageEntities) {
 
                     }
 

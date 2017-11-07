@@ -6,12 +6,12 @@ package com.jimmy.mvpcacheproxy.data.source;
  * @author yangyoujun
  */
 
-public abstract class AbsSource<R extends IRemoteSource, L extends ILocalSource> implements ISource {
+public abstract class AbsRepository<R extends IRemoteSource, L extends ILocalSource> implements ISource {
 
     private final R mRemote;
     private final L mLocal;
 
-    protected AbsSource(R remote, L local) {
+    protected AbsRepository(R remote, L local) {
         this.mRemote = remote;
         this.mLocal = local;
     }

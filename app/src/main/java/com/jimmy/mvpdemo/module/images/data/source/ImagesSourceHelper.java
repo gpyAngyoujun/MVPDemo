@@ -8,7 +8,9 @@ class ImagesSourceHelper {
 
     static final int FETCH_SIZE = 10;
 
-    static ImagesSource create() {
-        return new ImagesSource(new IImagesRemoteSource.SourceImpl(), new IImagesLocalSource.SourceImpl());
+    static ImagesRepository create() {
+        return new ImagesRepository.RepositoryImpl(
+                new IImagesRemoteSource.SourceImpl(),
+                new IImagesLocalSource.SourceImpl());
     }
 }
