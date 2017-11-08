@@ -52,7 +52,7 @@ public class ImagesView extends AbsView<IImages.Presenter, ImagesView.ViewHolder
     }
 
     @Override
-    public void updateImages(List<ImagesResp> images) {
+    public void setImages(List<ImagesResp.Results> images) {
 
     }
 

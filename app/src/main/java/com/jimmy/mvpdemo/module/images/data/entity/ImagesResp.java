@@ -32,7 +32,15 @@ public class ImagesResp extends AbsEntity {
 
     @Override
     public boolean isSuccessfully() {
-        return results != null && !results.isEmpty() && !error;
+        return results != null && !results.isEmpty() && !isError();
+    }
+
+    @Override
+    public String toString() {
+        return "ImagesResp{" +
+                "error=" + error +
+                ", results=" + results +
+                '}';
     }
 
     public static class Results extends AbsEntity {
@@ -122,6 +130,21 @@ public class ImagesResp extends AbsEntity {
         @Override
         public boolean isSuccessfully() {
             return true;
+        }
+
+        @Override
+        public String toString() {
+            return "Results{" +
+                    "_id='" + _id + '\'' +
+                    ", createdAt='" + createdAt + '\'' +
+                    ", desc='" + desc + '\'' +
+                    ", publishedAt='" + publishedAt + '\'' +
+                    ", source='" + source + '\'' +
+                    ", type='" + type + '\'' +
+                    ", url='" + url + '\'' +
+                    ", used=" + used +
+                    ", who='" + who + '\'' +
+                    '}';
         }
     }
 }

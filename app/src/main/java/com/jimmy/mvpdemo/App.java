@@ -2,6 +2,7 @@ package com.jimmy.mvpdemo;
 
 import android.app.Application;
 
+import com.jimmy.mvpcacheproxy.helper.LogHelper;
 import com.jimmy.mvpcacheproxy.helper.PermissionHelper;
 
 /**
@@ -13,5 +14,6 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         PermissionHelper.init(this);
+        LogHelper.setupTAG("MvpProxy");
     }
 }

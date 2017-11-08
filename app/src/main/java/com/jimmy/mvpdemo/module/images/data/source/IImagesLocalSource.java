@@ -1,16 +1,20 @@
 package com.jimmy.mvpdemo.module.images.data.source;
 
-import com.jimmy.mvpcacheproxy.data.source.ILocalSource;
+import com.jimmy.mvpcacheproxy.data.source.AbsLocalSource;
 import com.jimmy.mvpcacheproxy.data.source.ISource;
 
 /**
- * Created by yangyoujun on 17-9-20.
- * 本地方法
+ * 本地的图片数据源,来自数据库
+ *
+ * @author yangyoujun
  */
 
-public interface IImagesLocalSource extends ILocalSource, ISource {
+public interface IImagesLocalSource extends ISource<IImagesLocalSource> {
 
-    class SourceImpl implements IImagesLocalSource {
+    class SourceImpl extends AbsLocalSource<IImagesLocalSource> implements IImagesLocalSource {
 
+        SourceImpl() {
+            super(IImagesLocalSource.class);
+        }
     }
 }

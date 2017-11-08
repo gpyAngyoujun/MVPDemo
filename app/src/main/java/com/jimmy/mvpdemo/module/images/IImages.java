@@ -14,7 +14,10 @@ interface IImages {
 
     interface View extends IView {
 
-        void updateImages(List<ImagesResp> images);
+        /**
+         * 设置从repository中得到的images
+         */
+        void setImages(List<ImagesResp.Results> images);
     }
 
     interface Presenter extends IPresenter {

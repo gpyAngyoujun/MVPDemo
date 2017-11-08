@@ -36,7 +36,6 @@ public abstract class AbsRxPresenter<VP extends IView> extends AbsPresenter<VP> 
 
         protected ObserverOnRecycler() {
             mName = AbsRxPresenter.this.toString();
-            LogHelper.i(mName);
         }
 
         @Override

@@ -1,4 +1,4 @@
-package com.jimmy.mvpdemo;
+package com.jimmy.mvpdemo.frame;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -10,6 +10,7 @@ import android.view.MenuItem;
 
 import com.jimmy.mvpcacheproxy.AbsActivityContainer;
 import com.jimmy.mvpcacheproxy.widget.MultiplePagerContainer;
+import com.jimmy.mvpdemo.R;
 import com.jimmy.mvpdemo.module.images.ImagesView;
 
 public class MainActivity extends AbsActivityContainer {

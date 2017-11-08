@@ -24,6 +24,10 @@ public class LogHelper {
         ins().setupDbg(logging);
     }
 
+    public static void resetDbg() {
+        ins().resetDbg();
+    }
+
     public static void setupTAG(String tag) {
         ins().setupTag(tag);
     }
@@ -63,6 +67,10 @@ public class LogHelper {
 
         void setupDbg(IOnLogging logging) {
             mLogging = logging;
+        }
+
+        void resetDbg() {
+            mLogging = null;
         }
 
         void setupTag(String tag) {
