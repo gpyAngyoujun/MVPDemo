@@ -13,11 +13,11 @@ import com.jimmy.mvpcacheproxy.adapter.MultiplePagerAdapter;
  * 适用于多个fragment的显示，内部嵌入一个view pager来控制fragment
  */
 
-public abstract class AbsActivityContainer extends AbsActivity
+public abstract class AbsActivityContainer<T extends MultiplePagerContainer> extends AbsActivity
         implements IMultiplePagerDataSource, ViewPager.OnPageChangeListener {
 
     /* 可修改是否拦截touch事件 */
-    protected MultiplePagerContainer mContainer;
+    protected T mContainer;
     /* 这个adapter可以做成可扩展数量的 */
     protected MultiplePagerAdapter mAdapter;
 
@@ -89,6 +89,6 @@ public abstract class AbsActivityContainer extends AbsActivity
 
     protected abstract void onCreateActivity(Bundle savedInstanceState);
 
-    protected abstract MultiplePagerContainer onCreateViewPager();
+    protected abstract T onCreateViewPager();
 
 }

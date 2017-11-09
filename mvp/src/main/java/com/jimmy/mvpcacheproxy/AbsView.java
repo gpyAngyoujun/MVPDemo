@@ -1,6 +1,7 @@
 package com.jimmy.mvpcacheproxy;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -238,7 +239,7 @@ public abstract class AbsView<P extends IPresenter, VH extends AbsView.AbsViewHo
 
     public abstract static class AbsViewHolder {
 
-        public final View rootView;
+        protected final View rootView;
 
         protected AbsViewHolder(View rootView) {
             this.rootView = rootView;
@@ -266,6 +267,10 @@ public abstract class AbsView<P extends IPresenter, VH extends AbsView.AbsViewHo
 
         protected <T extends View> T findView(int ResId) {
             return (T) rootView.findViewById(ResId);
+        }
+
+        protected Context getContext() {
+            return rootView.getContext();
         }
 
     }
