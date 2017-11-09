@@ -46,7 +46,7 @@ class ImagesPresenter extends AbsRxPresenter<IImages.View> implements IImages.Pr
                     @Override
                     public void onError(Throwable e) {
                         super.onError(e);
-                        mViewProxy.showToast(R.string.app_name);
+                        mViewProxy.onEmptyPage();
                     }
                 });
     }

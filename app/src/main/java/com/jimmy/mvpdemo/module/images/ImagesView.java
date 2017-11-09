@@ -6,6 +6,8 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ProgressBar;
 
 import com.jimmy.mvp.AbsView;
 import com.jimmy.mvp.annotation.BindView;
@@ -49,18 +51,31 @@ public class ImagesView extends AbsView<IImages.Presenter, ViewHolder>
                 mPresenter.start();
             }
         });
+        mHolder.setOnRetryClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mPresenter.start();
+                mHolder.onEmptyPage(false);
+                mHolder.showProgressbar(true);
+            }
+        });
     }
 
     @Override
     protected void onBindDataLogic() {
         mHolder.bindRecyclerView(mAdapter);
-
     }
 
     @Override
     public void setImages(List<ImagesResp.Results> images) {
         mHolder.setRefreshing(false);
         mAdapter.setImages(images);
+        mHolder.onEmptyPage(false);
+    }
+
+    @Override
+    public void onEmptyPage() {
+        mHolder.onEmptyPage(true);
     }
 
 }
@@ -74,6 +89,12 @@ class ViewHolder extends AbsView.AbsViewHolder {
 
     @BindView(R.id.rv_images)
     private RecyclerView rvImages;
+
+    @BindView(R.id.pb_loading)
+    private ProgressBar pbLoading;
+
+    @BindView(R.id.btn_retry)
+    private Button btnRetry;
 
     ViewHolder(View rootView) {
         super(rootView);
@@ -106,4 +127,16 @@ class ViewHolder extends AbsView.AbsViewHolder {
         });
     }
 
+    void setOnRetryClickListener(View.OnClickListener listener) {
+        btnRetry.setOnClickListener(listener);
+    }
+
+    void onEmptyPage(boolean isShow) {
+        btnRetry.setVisibility(isShow ? View.VISIBLE : View.GONE);
+        showProgressbar(false);
+    }
+
+    void showProgressbar(boolean isShow) {
+        pbLoading.setVisibility(isShow ? View.VISIBLE : View.GONE);
+    }
 }

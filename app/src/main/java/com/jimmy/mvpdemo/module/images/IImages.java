@@ -18,6 +18,8 @@ interface IImages {
          * 设置从repository中得到的images
          */
         void setImages(List<ImagesResp.Results> images);
+
+        void onEmptyPage();
     }
 
     interface Presenter extends IPresenter {
