@@ -1,16 +1,14 @@
 package com.jimmy.mvpdemo.module.images;
 
-import android.content.Context;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.jimmy.mvpcacheproxy.AbsView;
-import com.jimmy.mvpcacheproxy.annotation.BindView;
+import com.jimmy.mvp.AbsView;
+import com.jimmy.mvp.annotation.BindView;
 import com.jimmy.mvpdemo.R;
 import com.jimmy.mvpdemo.module.images.adapter.ImagesAdapter;
 import com.jimmy.mvpdemo.module.images.data.entity.ImagesResp;

@@ -1,9 +1,9 @@
 package com.jimmy.mvpdemo.module.images.data.source;
 
-import com.jimmy.mvpcacheproxy.data.api.ApiHelper;
-import com.jimmy.mvpcacheproxy.data.source.AbsRemoteSource;
-import com.jimmy.mvpcacheproxy.data.source.ISource;
-import com.jimmy.mvpcacheproxy.externals.rxjava.OnWorkThread;
+import com.jimmy.mvp.data.api.ApiHelper;
+import com.jimmy.mvp.data.source.AbsRemoteSource;
+import com.jimmy.mvp.data.source.ISource;
+import com.jimmy.mvp.external.lib.rxjava.OnWorkThread;
 import com.jimmy.mvpdemo.common.Cons;
 import com.jimmy.mvpdemo.module.images.data.api.ImagesApi;
 import com.jimmy.mvpdemo.module.images.data.entity.ImagesResp;

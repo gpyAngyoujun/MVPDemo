@@ -1,6 +1,6 @@
 package com.jimmy.mvpdemo.module.images.data.source;
 
-import com.jimmy.mvpcacheproxy.data.source.AbsRepository;
+import com.jimmy.mvp.data.source.AbsRepository;
 
 /**
  * Created by yangyoujun on 17-9-17.

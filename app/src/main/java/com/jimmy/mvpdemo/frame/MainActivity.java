@@ -8,8 +8,8 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.view.MenuItem;
 
-import com.jimmy.mvpcacheproxy.AbsActivityContainer;
-import com.jimmy.mvpcacheproxy.widget.MultiplePagerContainer;
+import com.jimmy.mvp.AbsActivityContainer;
+import com.jimmy.mvp.widget.MultiplePagerContainer;
 import com.jimmy.mvpdemo.R;
 import com.jimmy.mvpdemo.module.images.ImagesView;
 

@@ -1,7 +1,7 @@
 package com.jimmy.mvpdemo.module.images.data.source;
 
-import com.jimmy.mvpcacheproxy.data.source.AbsLocalSource;
-import com.jimmy.mvpcacheproxy.data.source.ISource;
+import com.jimmy.mvp.data.source.AbsLocalSource;
+import com.jimmy.mvp.data.source.ISource;
 
 /**
  * 本地的图片数据源,来自数据库

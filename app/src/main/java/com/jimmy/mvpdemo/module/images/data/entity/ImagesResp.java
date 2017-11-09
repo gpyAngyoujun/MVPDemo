@@ -1,6 +1,6 @@
 package com.jimmy.mvpdemo.module.images.data.entity;
 
-import com.jimmy.mvpcacheproxy.data.entity.AbsEntity;
+import com.jimmy.mvp.data.entity.AbsEntity;
 
 import java.util.List;
 

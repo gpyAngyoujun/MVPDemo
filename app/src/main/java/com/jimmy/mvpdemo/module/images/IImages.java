@@ -1,7 +1,7 @@
 package com.jimmy.mvpdemo.module.images;
 
-import com.jimmy.mvpcacheproxy.IPresenter;
-import com.jimmy.mvpcacheproxy.IView;
+import com.jimmy.mvp.IPresenter;
+import com.jimmy.mvp.IView;
 import com.jimmy.mvpdemo.module.images.data.entity.ImagesResp;
 
 import java.util.List;

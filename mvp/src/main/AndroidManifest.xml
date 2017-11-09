@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.jimmy.mvpcacheproxy">
+    package="com.jimmy.mvp">
 
     <application
         android:allowBackup="true"
