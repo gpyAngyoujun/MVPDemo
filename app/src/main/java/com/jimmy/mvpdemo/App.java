@@ -2,8 +2,8 @@ package com.jimmy.mvpdemo;
 
 import android.app.Application;
 
-import com.jimmy.mvp.helper.LogHelper;
-import com.jimmy.mvp.helper.PermissionHelper;
+import com.jimmy.mvp.external.helper.LogHelper;
+import com.jimmy.mvp.external.helper.PermissionHelper;
 
 /**
  * Created by yangyoujun on 17-11-2.

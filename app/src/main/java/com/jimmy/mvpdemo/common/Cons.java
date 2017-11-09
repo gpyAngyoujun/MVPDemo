@@ -1,6 +1,6 @@
 package com.jimmy.mvpdemo.common;
 
-import com.jimmy.mvp.helper.PermissionHelper;
+import com.jimmy.mvp.external.helper.PermissionHelper;
 
 /**
  * @author yangyoujun

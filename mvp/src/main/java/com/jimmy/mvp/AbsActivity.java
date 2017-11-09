@@ -3,7 +3,7 @@ package com.jimmy.mvp;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.jimmy.mvp.helper.PermissionHelper;
+import com.jimmy.mvp.external.helper.PermissionHelper;
 
 
 /**

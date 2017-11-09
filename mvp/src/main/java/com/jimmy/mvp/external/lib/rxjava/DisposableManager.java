@@ -3,7 +3,7 @@ package com.jimmy.mvp.external.lib.rxjava;
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
 
-import com.jimmy.mvp.helper.LogHelper;
+import com.jimmy.mvp.external.helper.LogHelper;
 
 import java.util.Map;
 import java.util.WeakHashMap;

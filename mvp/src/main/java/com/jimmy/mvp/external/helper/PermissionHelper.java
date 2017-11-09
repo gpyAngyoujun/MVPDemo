@@ -1,4 +1,4 @@
-package com.jimmy.mvp.helper;
+package com.jimmy.mvp.external.helper;
 
 import android.content.Context;
 import android.content.SharedPreferences;

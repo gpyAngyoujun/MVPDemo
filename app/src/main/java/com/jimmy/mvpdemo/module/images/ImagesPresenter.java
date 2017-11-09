@@ -1,7 +1,7 @@
 package com.jimmy.mvpdemo.module.images;
 
 import com.jimmy.mvp.external.lib.rxjava.AbsRxPresenter;
-import com.jimmy.mvp.helper.LogHelper;
+import com.jimmy.mvp.external.helper.LogHelper;
 import com.jimmy.mvpdemo.R;
 import com.jimmy.mvpdemo.module.images.data.entity.ImagesResp;
 import com.jimmy.mvpdemo.module.images.data.source.ImagesRepository;
