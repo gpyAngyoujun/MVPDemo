@@ -2,7 +2,7 @@ package com.jimmy.mvp.data.source;
 
 import com.jimmy.mvp.data.entity.AbsEntity;
 import com.jimmy.mvp.external.lib.rxjava.ObservableHelper;
-import com.jimmy.mvp.external.lib.rxjava.OnWorkThread;
+import com.jimmy.mvp.external.lib.rxjava.OnIOThread;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -33,8 +33,8 @@ public final class SourceHelper {
                     }
 
                     private boolean isWrap(Method method) {
-                        OnWorkThread onWorkThread = method.getAnnotation(OnWorkThread.class);
-                        return onWorkThread != null && onWorkThread.value();
+                        OnIOThread onIOThread = method.getAnnotation(OnIOThread.class);
+                        return onIOThread != null && onIOThread.value();
                     }
                 });
     }

@@ -3,7 +3,7 @@ package com.jimmy.mvpdemo.module.images.data.source;
 import com.jimmy.mvp.data.api.ApiHelper;
 import com.jimmy.mvp.data.source.AbsRemoteSource;
 import com.jimmy.mvp.data.source.ISource;
-import com.jimmy.mvp.external.lib.rxjava.OnWorkThread;
+import com.jimmy.mvp.external.lib.rxjava.OnIOThread;
 import com.jimmy.mvpdemo.common.Cons;
 import com.jimmy.mvpdemo.module.images.data.api.ImagesApi;
 import com.jimmy.mvpdemo.module.images.data.entity.ImagesResp;
@@ -25,7 +25,7 @@ public interface IImagesRemoteSource extends ISource<IImagesRemoteSource> {
      * @param pager 页,表示要获取第几页的数据
      * @return 返回一个可观测的闭包
      */
-    @OnWorkThread
+    @OnIOThread
     Observable<ImagesResp> fetchImages(int pager);
 
     class SourceImpl extends AbsRemoteSource<IImagesRemoteSource> implements IImagesRemoteSource {
