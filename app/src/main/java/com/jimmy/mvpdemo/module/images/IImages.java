@@ -16,9 +16,14 @@ interface IImages {
 
         /**
          * 设置从repository中得到的images
+         *
+         * @param images 图片列表信息
          */
         void setImages(List<ImagesResp.Results> images);
 
+        /**
+         * 进入空页面
+         */
         void onEmptyPage();
     }
 
