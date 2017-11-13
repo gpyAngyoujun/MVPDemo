@@ -9,8 +9,9 @@ import com.jimmy.mvp.adapter.MultiplePagerAdapter;
 
 
 /**
- * Created by yangyoujun on 17-8-26.
  * 适用于多个fragment的显示，内部嵌入一个view pager来控制fragment
+ *
+ * @author yangyoujun
  */
 
 public abstract class AbsActivityContainer<T extends MultiplePagerContainer> extends AbsActivity
@@ -28,6 +29,10 @@ public abstract class AbsActivityContainer<T extends MultiplePagerContainer> ext
     }
 
     private void create() {
+        if (onGetPagerCount() <= 0) {
+            return;
+        }
+
         mContainer = onCreateViewPager();
         if (mContainer == null) {
             throw new NullPointerException("View Pager is NULL");

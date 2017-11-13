@@ -13,7 +13,7 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        PermissionHelper.init(this);
+        PermissionHelper.ins().init(this);
         LogHelper.setupTAG("MvpProxy");
     }
 }

@@ -47,6 +47,9 @@ public abstract class AbsView<P extends IPresenter, VH extends AbsView.AbsViewHo
         return (PROXY) MVPProxyHelper.create();
     }
 
+    /**
+     * 用默认的handler生成一个view的代理
+     */
     protected final <V extends IView> V defaultProxy(Class<V> vCls) {
         return MVPProxyHelper.proxy(mMvpCacheProxy, vCls);
     }

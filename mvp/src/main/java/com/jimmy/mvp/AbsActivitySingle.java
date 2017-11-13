@@ -5,7 +5,10 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.text.TextUtils;
 
-
+/**
+ * @param <T> view
+ * @author yangyoujun
+ */
 public abstract class AbsActivitySingle<T extends AbsView> extends AbsActivity {
 
     @Override
@@ -30,8 +33,16 @@ public abstract class AbsActivitySingle<T extends AbsView> extends AbsActivity {
                 .commit();
     }
 
+    /**
+     * 返回一个view对象, 该对象是view且继承AbsView
+     */
     protected abstract T onFragmentView(Bundle savedInstanceState);
 
+    /**
+     * 创建fragment的时候附带的tag
+     *
+     * @return fragment的tag
+     */
     protected abstract String onFragmentTag();
 
 }

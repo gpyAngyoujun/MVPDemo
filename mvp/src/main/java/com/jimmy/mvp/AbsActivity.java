@@ -26,14 +26,14 @@ abstract class AbsActivity extends AppCompatActivity {
     }
 
     protected final boolean hasPermission() {
-        if (!PermissionHelper.has()) {
-            PermissionHelper.init(this);
+        if (!PermissionHelper.ins().has()) {
+            PermissionHelper.ins().init(this);
         }
-        return PermissionHelper.has();
+        return PermissionHelper.ins().has();
     }
 
     protected final void setPermission(boolean isRun) {
-        PermissionHelper.update(this, isRun);
+        PermissionHelper.ins().update(this, isRun);
     }
 
     // 建议复写

@@ -17,7 +17,7 @@ public final class Cons {
         /*
           此处用于判断是否为拟真环境
          */
-        return PermissionHelper.has() ? URL_RELEASE : URL_DEBUG;
+        return PermissionHelper.ins().has() ? URL_RELEASE : URL_DEBUG;
     }
 
 }

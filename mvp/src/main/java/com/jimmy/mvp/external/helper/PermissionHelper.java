@@ -14,14 +14,30 @@ public final class PermissionHelper {
 
     private static final String CONFIG = "CONFIG";
     private static final String KEY_PERMISSION = "Permission";
-    private static boolean sPERMISSION;
+    private boolean sPERMISSION;
+
+    private static PermissionHelper mInstance = null;
+
+    public static PermissionHelper ins() {
+        if (mInstance == null) {
+            synchronized (PermissionHelper.class) {
+                if (mInstance == null) {
+                    mInstance = new PermissionHelper();
+                }
+            }
+        }
+        return mInstance;
+    }
+
+    private PermissionHelper() {
+    }
 
     /**
      * 判断是否有运行权限
      *
      * @return
      */
-    public static boolean has() {
+    public boolean has() {
         return sPERMISSION;
     }
 
@@ -30,7 +46,7 @@ public final class PermissionHelper {
      *
      * @return
      */
-    public static boolean init(Context context) {
+    public boolean init(Context context) {
         sPERMISSION = shared(context).getBoolean(KEY_PERMISSION, false);
         return sPERMISSION;
     }
@@ -38,12 +54,12 @@ public final class PermissionHelper {
     /**
      * 更新权限
      */
-    public static void update(Context context, boolean hasPermission) {
+    public void update(Context context, boolean hasPermission) {
         sPERMISSION = hasPermission;
         shared(context).edit().putBoolean(KEY_PERMISSION, hasPermission).apply();
     }
 
-    private static SharedPreferences shared(Context context) {
+    private SharedPreferences shared(Context context) {
         return context.getSharedPreferences(CONFIG, MODE_PRIVATE);
     }
 }

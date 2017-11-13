@@ -1,6 +1,8 @@
 package com.jimmy.mvp.proxy;
 
 
+import android.support.v4.util.ArrayMap;
+
 import com.jimmy.mvp.IView;
 import com.jimmy.mvp.annotation.CacheMethod;
 
@@ -9,7 +11,6 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
-import java.util.HashMap;
 import java.util.Map;
 
 
@@ -19,7 +20,7 @@ import java.util.Map;
 public abstract class AbsCacheProxy implements InvocationHandler {
 
     /* 如果是weakhashmap。fragment destroy view就会回收数据了 */
-    private final Map<Method, Object[]> mViewCaches = new HashMap<>();
+    private final Map<Method, Object[]> mViewCaches = new ArrayMap<>();
     private WeakReference<IView> mView;
 
     <V extends IView> V proxy(Class<V> viewClass) {
