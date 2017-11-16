@@ -2,6 +2,7 @@ package com.jimmy.mvp;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 
 import com.jimmy.mvp.external.helper.PermissionHelper;
 
@@ -40,6 +41,10 @@ abstract class AbsActivity extends AppCompatActivity {
     protected void requestPermission(Bundle savedInstanceState) {
         setPermission(true);
         onAgree(savedInstanceState);
+    }
+
+    protected <T extends View> T findView(int resId) {
+        return (T) findViewById(resId);
     }
 
     protected abstract void onAgree(Bundle savedInstanceState);
