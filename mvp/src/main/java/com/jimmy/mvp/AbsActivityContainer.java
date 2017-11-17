@@ -49,7 +49,8 @@ public abstract class AbsActivityContainer<T extends MultiplePagerContainer> ext
     protected void onDestroy() {
         if (mContainer != null) {
             mContainer.setAdapter(null);
-            mContainer.removeOnPageChangeListener(this);
+            mContainer.clearOnPageChangeListeners();
+            mContainer.setOnPageChangeListener(null);
             mContainer = null;
         }
         if (mAdapter != null) {
