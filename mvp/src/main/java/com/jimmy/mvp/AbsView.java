@@ -34,7 +34,7 @@ public abstract class AbsView<P extends IPresenter, VH extends AbsView.AbsViewHo
     private void initMvp() {
         mMvpCacheProxy = onCreateCacheProxy();
         if (mMvpCacheProxy == null) {
-            mMvpCacheProxy = this.onCreateCacheProxy();
+            mMvpCacheProxy = MVPProxyHelper.create();
         }
         mPresenter = onCreatePresenter();
         if (mPresenter == null) {
