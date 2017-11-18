@@ -1,6 +1,9 @@
 package com.jimmy.mvp;
 
 
+import android.content.Context;
+import android.os.Bundle;
+
 public abstract class AbsPresenter<VP extends IView> implements IPresenter {
 
     /* deprecate
@@ -20,9 +23,9 @@ public abstract class AbsPresenter<VP extends IView> implements IPresenter {
     }
 
     @Override
-    public final void start() {
+    public final void start(Context context, Bundle arguments) {
         if (mIsFetch) {
-            onStart();
+            onStart(context, arguments);
         }
     }
 
@@ -38,7 +41,7 @@ public abstract class AbsPresenter<VP extends IView> implements IPresenter {
     }
 
     /*请在该方法中判断数据是否过期,生命周期的响应*/
-    protected abstract void onStart();
+    protected abstract void onStart(Context context, Bundle arguments);
 
     /*请在该方法中回收所有的对象,生命周期的响应*/
     protected abstract void onDestroy();

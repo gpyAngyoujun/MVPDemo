@@ -1,8 +1,10 @@
 package com.jimmy.mvpdemo.module.images;
 
+import android.content.Context;
+import android.os.Bundle;
+
 import com.jimmy.mvp.external.lib.rxjava.AbsRxPresenter;
 import com.jimmy.mvp.external.helper.LogHelper;
-import com.jimmy.mvpdemo.R;
 import com.jimmy.mvpdemo.module.images.data.entity.ImagesResp;
 import com.jimmy.mvpdemo.module.images.data.source.ImagesRepository;
 
@@ -23,7 +25,7 @@ class ImagesPresenter extends AbsRxPresenter<IImages.View> implements IImages.Pr
     }
 
     @Override
-    protected void onStart() {
+    protected void onStart(Context context, Bundle arguments) {
 
         ImagesRepository.ins()
                 .remote()

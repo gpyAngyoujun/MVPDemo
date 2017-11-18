@@ -148,7 +148,7 @@ public abstract class AbsView<P extends IPresenter, VH extends AbsView.AbsViewHo
     /*当 fragment 第一次显示到用户眼前的时候，回调次方法，以后都是回调onShow*/
     protected void onFirstShow() {
         mPresenter.setFetchPermission(true);
-        mPresenter.start();
+        mPresenter.start(getContext(), getArguments());
     }
 
     @Override

@@ -48,13 +48,13 @@ public class ImagesView extends AbsView<IImages.Presenter, ViewHolder>
         mHolder.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                mPresenter.start();
+                mPresenter.start(getContext(), getArguments());
             }
         });
         mHolder.setOnRetryClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mPresenter.start();
+                mPresenter.start(getContext(), getArguments());
                 mHolder.onEmptyPage(false);
                 mHolder.showProgressbar(true);
             }
