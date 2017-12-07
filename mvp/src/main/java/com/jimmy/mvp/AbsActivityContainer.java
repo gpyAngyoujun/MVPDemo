@@ -26,6 +26,7 @@ public abstract class AbsActivityContainer<T extends MultiplePagerContainer> ext
     protected final void onAgree(Bundle savedInstanceState) {
         onCreateActivity(savedInstanceState);
         create();
+        onCreated(savedInstanceState);
     }
 
     private void create() {
@@ -96,5 +97,10 @@ public abstract class AbsActivityContainer<T extends MultiplePagerContainer> ext
     protected abstract void onCreateActivity(Bundle savedInstanceState);
 
     protected abstract T onCreateViewPager();
+
+    /**
+     * 创建完viewpager后回调
+     */
+    protected abstract void onCreated(Bundle savedInstanceState);
 
 }
