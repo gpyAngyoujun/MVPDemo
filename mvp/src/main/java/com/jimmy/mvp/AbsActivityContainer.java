@@ -74,8 +74,12 @@ public abstract class AbsActivityContainer<T extends MultiplePagerContainer> ext
     }
 
     protected void setCurrentItem(int position) {
+        setCurrentItem(position, true);
+    }
+
+    protected void setCurrentItem(int position, boolean hasAnimate) {
         if (mContainer != null && mAdapter != null && position > -1 && position < mAdapter.getCount()) {
-            mContainer.setCurrentItem(position);
+            mContainer.setCurrentItem(position, hasAnimate);
         }
     }
 
