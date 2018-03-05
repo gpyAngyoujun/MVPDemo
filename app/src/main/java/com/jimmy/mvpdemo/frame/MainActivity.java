@@ -77,6 +77,11 @@ public class MainActivity extends AbsActivityContainer {
     }
 
     @Override
+    protected void onCreated(Bundle savedInstanceState) {
+
+    }
+
+    @Override
     public int onGetPagerCount() {
         return PAGER_SIZE;
     }
