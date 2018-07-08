@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Module-Images</string>
+    <string name="click_retry">点击重试</string>
+    <string name="net_error">没有加载到数据，请检查网络链接</string>
 </resources>

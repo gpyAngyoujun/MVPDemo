@@ -15,7 +15,7 @@ public class EmptyRouter extends IModuleContract {
 
     @Override
     public Object load() {
-        return null;
+        return new EmptyView();
     }
 
     @Override

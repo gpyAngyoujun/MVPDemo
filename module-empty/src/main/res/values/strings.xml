@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">module-empty</string>
+    <string name="empty_page">empty page</string>
 </resources>

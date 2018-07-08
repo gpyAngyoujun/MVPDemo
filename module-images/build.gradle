@@ -18,6 +18,8 @@ android {
         }
     }
     buildToolsVersion '27.0.3'
+
+    resourcePrefix 'images_'
 }
 
 dependencies {

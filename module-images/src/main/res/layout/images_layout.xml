@@ -17,7 +17,7 @@
 
     </android.support.v4.widget.SwipeRefreshLayout>
 
-    <include layout="@layout/empty_page_layout_include"/>
+    <include layout="@layout/waiting_retry_layout_merge"/>
 
 </FrameLayout>
 

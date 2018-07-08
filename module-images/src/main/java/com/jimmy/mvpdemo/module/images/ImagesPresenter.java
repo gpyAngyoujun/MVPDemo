@@ -10,7 +10,9 @@ import com.jimmy.mvpdemo.module.images.data.source.ImagesRepository;
 
 import java.util.List;
 
+import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.functions.Function;
+import io.reactivex.schedulers.Schedulers;
 
 /**
  * Created by yangyoujun on 17-9-16.
@@ -30,6 +32,8 @@ class ImagesPresenter extends AbsRxPresenter<IImages.View> implements IImages.Pr
         ImagesRepository.ins()
                 .remote()
                 .fetchImages(PAGER)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
                 .map(new Function<ImagesResp, List<ImagesResp.Results>>() {
                     @Override
                     public List<ImagesResp.Results> apply(ImagesResp imagesResp) throws Exception {

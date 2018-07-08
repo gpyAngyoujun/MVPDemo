@@ -54,7 +54,15 @@ public class ModuleRouter {
     }
 
     public IModuleContract route(int router) {
-        return this.route(String.valueOf(router));
+        switch (router) {
+            case 0:
+                return this.route(RouterRegistry.IMAGES);
+            case 1:
+            case 2:
+                return this.route(RouterRegistry.EMPTY);
+            default:
+                return this.route(String.valueOf(router));
+        }
     }
 
     public IModuleContract route(String router) {
