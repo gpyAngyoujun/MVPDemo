@@ -1,1 +1,4 @@
-include ':app', ':mvp'
+include ':app', ':contract-router',
+        ':module-images', ':module-empty', ':module-bridge',
+        ':lib-mvp', ':lib-mvp-external', ':lib-bridge',
+        ':extra'

@@ -9,10 +9,14 @@ import android.support.v4.app.Fragment;
 import android.view.MenuItem;
 
 import com.jimmy.mvp.AbsActivityContainer;
+import com.jimmy.mvp.AppPermission;
 import com.jimmy.mvp.widget.MultiplePagerContainer;
 import com.jimmy.mvpdemo.R;
-import com.jimmy.mvpdemo.module.images.ImagesView;
+import com.jimmy.mvpdemo.module.bridge.ModuleRouter;
 
+/**
+ * @author jimmy
+ */
 public class MainActivity extends AbsActivityContainer {
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -38,10 +42,10 @@ public class MainActivity extends AbsActivityContainer {
     };
 
     private BottomNavigationView navigation;
-    private final int PAGER_SIZE = 3;
+    private static final int PAGER_SIZE = 3;
 
     @Override
-    protected void requestPermission(final Bundle savedInstanceState) {
+    protected void requestPermission(final AppPermission.Callback callback) {
         new AlertDialog.Builder(this)
                 .setTitle(R.string.permission_reminder)
                 .setMessage(R.string.meitu_premission_prompt_desc)
@@ -50,14 +54,14 @@ public class MainActivity extends AbsActivityContainer {
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int id) {
-                                setPermission(true);
-                                onAgree(savedInstanceState);
+                                callback.result(true);
                             }
                         })
                 .setNegativeButton(R.string.cancel,
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int id) {
+                                callback.result(false);
                                 finish();
                             }
                         })
@@ -67,7 +71,7 @@ public class MainActivity extends AbsActivityContainer {
     @Override
     protected void onCreateActivity(Bundle savedInstanceState) {
         setContentView(R.layout.activity_main);
-        navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation = findView(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 
@@ -77,23 +81,13 @@ public class MainActivity extends AbsActivityContainer {
     }
 
     @Override
-    protected void onCreated(Bundle savedInstanceState) {
-
-    }
-
-    @Override
     public int onGetPagerCount() {
         return PAGER_SIZE;
     }
 
     @Override
     public Fragment onCreateFragmentViewItem(int position) {
-        switch (position) {
-            case 0:
-                return new ImagesView().lazyLoading(true);
-            default:
-                return new Fragment();
-        }
+        return (Fragment) ModuleRouter.ins().route(position).load();
     }
 
     @Override
