@@ -6,7 +6,7 @@ MVP+动态代理的模式框架例子
 * 世上没有最好的架构，只有最符合需求的架构。
 
 ## MVP架构
-* 参考链接：[浅谈Android中的MVP与动态代理的结合](https://blog.csdn.net/yang542397/article/details/78074629)
+* 架构介绍链接：[浅谈Android中的MVP与动态代理的结合](https://blog.csdn.net/yang542397/article/details/78074629)
 
 ## 组件化
 * 我将本Demo利用组件化的思想对业务进行拆解。
