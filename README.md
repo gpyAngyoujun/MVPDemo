@@ -15,6 +15,6 @@ MVP+动态代理的模式框架例子
 
  ![image](https://github.com/gpyAngyoujun/MVPDemo/raw/master/photos/MvpDemo2.png)
  
-* Demo截图
+### Demo截图
 
  ![image](https://github.com/gpyAngyoujun/MVPDemo/raw/master/photos/MvpDemo.png)
