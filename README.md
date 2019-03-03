@@ -11,9 +11,10 @@ MVP+动态代理的模式框架例子
 ## 组件化
 * 我将本Demo利用组件化的思想对业务进行拆解。
 
- ![image](https://github.com/gpyAngyoujun/MVPDemo/raw/master/photos/MvpDemo.png)
-
-
 ### 架构图
 
  ![image](https://github.com/gpyAngyoujun/MVPDemo/raw/master/photos/MvpDemo2.png)
+ 
+* Demo截图
+
+ ![image](https://github.com/gpyAngyoujun/MVPDemo/raw/master/photos/MvpDemo.png)
